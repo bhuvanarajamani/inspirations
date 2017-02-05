@@ -3,25 +3,26 @@
 
 .brick {
   height: auto;
-  width: 245px;
+  width: 205px;
   display: inline-block;
+}
 
-//to assign dynamic colors
-/*
-  & div .card-block{
-    background-color: getRandomColor("rgba");
-    color: getRandomColor("rgb");
+div .card-block {
+  p {
+    font-size: 13px;
   }
-  */
+  footer cite{
+    font-size: 11px;
+  }
 }
 
 .card-header, .card-header i{
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .card-footer i{
-  padding: 5px;
-  margin: 2px;
+  padding: 3px;
+  margin: 1px;
 
   &.fa-facebook{
     color: $facebook-brand;
