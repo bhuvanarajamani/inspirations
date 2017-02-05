@@ -1,0 +1,33 @@
+<masonry>
+    <masonry-brick class="brick" *ngFor="let quote of quotes">
+        <div class="card">
+            <div class="card-header">
+                 <i class="fa fa-tags" aria-hidden="true"></i>
+                {{ quote.tags }}
+            </div>
+            
+            <div class="card-block" [style.background-color]="quote.bgcolor" [style.font-family]="quote.fontname" [style.color]="quote.fontcolor">
+                <blockquote class="card-blockquote">
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                <p>
+                     {{ quote.saying}}
+                </p>
+                <footer><cite title="Source Title">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    {{ quote.author }}
+                </cite></footer>
+                </blockquote>
+            </div>
+            <div class="card-footer">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                <i class="fa fa-download" aria-hidden="true"></i>
+            </div>
+        </div>
+    </masonry-brick>
+</masonry>
+
+

@@ -1,0 +1,44 @@
+@import "../../../variables";
+@import "../../../random";
+
+.brick {
+  height: auto;
+  width: 245px;
+  display: inline-block;
+
+//to assign dynamic colors
+/*
+  & div .card-block{
+    background-color: getRandomColor("rgba");
+    color: getRandomColor("rgb");
+  }
+  */
+}
+
+.card-header, .card-header i{
+  font-size: 12px;
+}
+
+.card-footer i{
+  padding: 5px;
+  margin: 2px;
+
+  &.fa-facebook{
+    color: $facebook-brand;
+  }
+  &.fa-twitter{
+    color: $twitter-brand
+  }
+  &.fa-pinterest{
+    color: $pinterest-brand
+  }
+  &.fa-instagram {
+    color: $instagram-brand
+  }
+  &.fa-whatsapp {
+    color: $whatsapp-brand
+  }
+  &.fa-download {
+    color: $download-brand
+  }
+}
