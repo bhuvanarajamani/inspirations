@@ -11,7 +11,7 @@ import { Quote } from '../models/quote';
 
 @Injectable()
 export class QuotesService {
-  private baseUrl: string = '/assets/data.json';
+  private baseUrl: string = './assets/data.json';
 
   constructor(private http: Http) { }
   
