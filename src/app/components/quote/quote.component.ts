@@ -20,7 +20,6 @@ export class QuoteComponent implements OnInit {
     this.quotesService.getQuotes()
       .subscribe(
         quotes => {
-          console.log("quotes... ", quotes);
           this.quotes = this.transformQuotes(quotes);
         }
       );
