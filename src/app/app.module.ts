@@ -15,8 +15,9 @@ import { NavbarComponent } from './components/presentation/navbar/navbar.compone
 import { AboutComponent } from './components/presentation/about/about.component';
 import { SearchComponent } from './components/presentation/search/search.component'
 
-const routes: Routes[];
-
+const routes: Routes = [
+  { path : '', component: QuoteComponent, pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
