@@ -6,14 +6,21 @@ import { HttpModule } from '@angular/http';
 import { MasonryModule } from 'angular2-masonry';
 
 import { AppComponent } from './app.component';
-import { QuoteComponent } from './components/quote/quote.component';
+import { QuoteComponent } from './components/containers/quote/quote.component';
 
-import { QuotesService } from './services/quotes.service'
+import { QuotesService } from './services/quotes.service';
+import { ColorsService } from './services/colors.service';
+import { NavbarComponent } from './components/presentation/navbar/navbar.component';
+import { AboutComponent } from './components/presentation/about/about.component';
+import { SearchComponent } from './components/presentation/search/search.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuoteComponent
+    QuoteComponent,
+    NavbarComponent,
+    AboutComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,10 @@ import { QuotesService } from './services/quotes.service'
     HttpModule,
     MasonryModule
   ],
-  providers: [QuotesService],
+  providers: [
+    QuotesService,
+    ColorsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
