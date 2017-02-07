@@ -13,7 +13,8 @@ import { QuotesService } from './services/quotes.service';
 import { ColorsService } from './services/colors.service';
 import { NavbarComponent } from './components/presentation/navbar/navbar.component';
 import { AboutComponent } from './components/presentation/about/about.component';
-import { SearchComponent } from './components/presentation/search/search.component'
+import { SearchComponent } from './components/presentation/search/search.component';
+import { HomeComponent } from './components/presentation/home/home.component'
 
 const routes: Routes = [
   { path : '', component: QuoteComponent, pathMatch: 'full'}
@@ -25,7 +26,8 @@ const routes: Routes = [
     QuoteComponent,
     NavbarComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
