@@ -35,7 +35,7 @@ export class QuoteComponent implements OnInit {
     for (var i = 0; quotes.length > i; i++){
       this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
       this.style = new Style();
-      console.log("selected font ==>", this.style.getFont());
+      //console.log("selected font ==>", this.style.getFont());
       let quote = <Quote>({
         id: quotes[i].id,
         saying : quotes[i].saying,

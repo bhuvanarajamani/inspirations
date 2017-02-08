@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { RouterModule, Routes } from '@angular/router';
 
 import { MasonryModule } from 'angular2-masonry';
 
@@ -14,13 +13,10 @@ import { ColorsService } from './services/colors.service';
 import { NavbarComponent } from './components/presentation/navbar/navbar.component';
 import { AboutComponent } from './components/presentation/about/about.component';
 import { SearchComponent } from './components/presentation/search/search.component';
-import { HomeComponent } from './components/presentation/home/home.component'
+import { HomeComponent } from './components/presentation/home/home.component';
+import { NotFoundComponent } from './components/presentation/not-found/not-found.component'
 
-/*
-const routes: Routes = [
-  { path : '', component: QuoteComponent, pathMatch: 'full'}
-];
-*/
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -29,13 +25,15 @@ const routes: Routes = [
     NavbarComponent,
     AboutComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MasonryModule
+    MasonryModule,
+    routing
   ],
   providers: [
     QuotesService,
