@@ -8,16 +8,17 @@ import 'rxjs/add/observable/throw';
 
 import { Quote } from '../models/quote';
 
+const QUOTES_API: string = "/quotes";
+
 @Injectable()
 export class QuotesService {
-  private baseUrl: string = './assets/data.json';
 
   constructor(private http: Http) { }
   
   getQuotes(): Observable<Quote[]>{
     return this.http
-      .get(this.baseUrl)
-      .map(resp => resp.json().quotes)
+      .get(QUOTES_API)
+      .map(resp => resp.json())
       .catch((error: any) => Observable.throw(error.json()));
   }
 
