@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent{
+  searchStr: string;
 
   constructor() { }
 
-  ngOnInit() {
+  searchQuotes(){
+    console.log("searchStr => ", this.searchStr);
   }
 
 }

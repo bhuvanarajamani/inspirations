@@ -2,6 +2,6 @@
 <p class="lead">Use the "Inspirations" app to browse inspiring thoughts from great leaders.</p>
 <form>
   <div class="form-group">
-    <input class="form-control" placeholder="Search...">
+    <input class="form-control" placeholder="Search..." type="text" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchQuotes()">
   </div>
 </form>
