@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 
 import { Quote } from '../models/quote';
 
-const QUOTES_API: string = "/quotes";
+const QUOTES_API: string = "./assets/data.json";
 
 @Injectable()
 export class QuotesService {
@@ -18,7 +18,7 @@ export class QuotesService {
   getQuotes(): Observable<Quote[]>{
     return this.http
       .get(QUOTES_API)
-      .map(resp => resp.json())
+      .map(resp => resp.json().quotes)
       .catch((error: any) => Observable.throw(error.json()));
   }
 
