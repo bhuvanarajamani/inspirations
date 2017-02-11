@@ -1,7 +1,7 @@
-<h1>Need some inspiration?</h1>
-<p class="lead">Use the "Inspirations" app to browse inspiring thoughts from great leaders.</p>
-<form>
-  <div class="form-group">
-    <input class="form-control" placeholder="Search..." type="text" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchQuotes()">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <input class="form-control" placeholder="Search quote..." type="text" [value]="searchterm" #val (keyup)="onSearch(val.value)">
+    </div>
   </div>
-</form>
+</div>

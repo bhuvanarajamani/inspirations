@@ -1,17 +1,31 @@
-import { Component} from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
+
+import { Quote } from '../../../models/quote';
 
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent{
-  searchStr: string;
+export class SearchComponent implements OnChanges{
+  
+  @Input()
+  searchterm: string = "";
+
+  @Output()
+  search: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
-  searchQuotes(){
-    console.log("searchStr => ", this.searchStr);
+  ngOnChanges(changes) {
+    if (changes.searchterm) {
+      this.searchterm = changes.searchterm.currentValue;
+    }
+  }
+
+  onSearch(value: string){
+    this.searchterm = value;
+    this.search.emit(this.searchterm);
   }
 
 }

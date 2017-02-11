@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Quote } from '../../../models/quote';
 import { Color } from '../../../models/color';
 import { QuotesService } from '../../../services/quotes.service';
@@ -6,20 +7,21 @@ import { ColorsService } from '../../../services/colors.service';
 import { Style } from '../../../utilities/style';
 
 @Component({
-  selector: 'quote',
-  templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.scss']
+  selector: 'quotes-dashboard',
+  templateUrl: './quotes-dashboard.component.html',
+  styleUrls: ['./quotes-dashboard.component.scss']
 })
+export class QuotesDashboardComponent implements OnInit {
 
-export class QuoteComponent implements OnInit {
-  
   quotes: Quote[];
   colors: Color[];
   
   color: Color;
   style: Style;
 
-  constructor(private quotesService: QuotesService, private colorsService: ColorsService) {}
+  term:string = "";
+
+  constructor(private quotesService: QuotesService, private colorsService: ColorsService) { }
 
   ngOnInit() {
     this.colors = this.colorsService.getColors();
@@ -31,11 +33,23 @@ export class QuoteComponent implements OnInit {
       );
   }
 
+  handleSearch(event: string){
+    this.quotesService.getQuotes()
+      .subscribe(
+        _quotes => {
+          this.quotes = this.transformQuotes(
+            _quotes.filter((quote: Quote) => {
+              return quote.saying.toLocaleLowerCase().includes(event.toLowerCase());
+            })
+          );
+        }
+      );
+  }
+
   transformQuotes(quotes: Quote[]) : Quote[]{
     for (var i = 0; quotes.length > i; i++){
       this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
       this.style = new Style();
-      //console.log("selected font ==>", this.style.getFont());
       let quote = <Quote>({
         id: quotes[i].id,
         saying : quotes[i].saying,

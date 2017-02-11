@@ -1,0 +1,11 @@
+<blockquote class="blockquote">
+  <p>If you want to shine like a sun, first burn like a sun.</p>
+  <footer class="blockquote-footer">A. P. J. Abdul Kalam</footer>
+</blockquote>
+
+<div class="form-group row">
+  <search [searchterm]="term" (search)="handleSearch($event)"></search>
+</div>
+
+<quote *ngFor="let quote of quotes;" [card]="quote"></quote>
+
